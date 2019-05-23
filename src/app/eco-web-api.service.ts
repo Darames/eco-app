@@ -7,7 +7,7 @@ import { EcoServer } from './eco-server';
   providedIn: 'root'
 })
 export class EcoWebApiService {
-  private serverUrl = '89.163.231.54:1001/info';
+  private serverUrl = 'http://89.163.231.54:1002/info';
   constructor(
     private http: HttpClient
   ) { }
