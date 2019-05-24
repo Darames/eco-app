@@ -1,8 +1,10 @@
-{{server}}
-<ul>
-  <li *ngFor="let item of server">
-    {{item}} - {{item}}
-  </li>
-</ul>
-
-https://eco-mods.com/threads/eco-web-api.79/
+<div class="container">
+  <div class="row" *ngFor="let item of (server$ | async) | keyvalue">
+    <div class="col-6">
+        {{item.key}}
+    </div>
+    <div class="col-6">
+        {{item.value}}
+    </div>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { EcoServer } from '../eco-server';
-import { EcoWebApiService } from '../eco-web-api.service';
+import { EcoServer } from '../classes/eco-server';
+import { EcoWebApiService } from '../sevices/eco-web-api.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-server-info',
@@ -8,7 +9,9 @@ import { EcoWebApiService } from '../eco-web-api.service';
   styleUrls: ['./server-info.component.scss']
 })
 export class ServerInfoComponent implements OnInit {
-  server: EcoServer;
+
+  server$: Observable<EcoServer[]>;
+
   constructor(
     private ecoWebApiService: EcoWebApiService
   ) { }
@@ -16,9 +19,9 @@ export class ServerInfoComponent implements OnInit {
   ngOnInit() {
     this.showServerInfo();
   }
+
   showServerInfo() {
-    this.ecoWebApiService.getServerInfo()
-      .subscribe((data: EcoServer) => this.server = { ...data });
+    this.server$ = this.ecoWebApiService.getServerInfo();
   }
-  
+
 }

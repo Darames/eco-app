@@ -4,11 +4,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServerInfoComponent } from './server-info/server-info.component';
+import { PlayerStatsComponent } from './player-stats/player-stats.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ServerInfoComponent
+    ServerInfoComponent,
+    PlayerStatsComponent
   ],
   imports: [
     BrowserModule,
