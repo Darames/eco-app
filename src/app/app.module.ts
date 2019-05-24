@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServerInfoComponent } from './server-info/server-info.component';
 import { PlayerStatsComponent } from './player-stats/player-stats.component';
+import { ChartjsModule } from '@ctrl/ngx-chartjs';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PlayerStatsComponent } from './player-stats/player-stats.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartjsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
