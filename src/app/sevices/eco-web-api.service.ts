@@ -9,6 +9,7 @@ import { EcoServer } from '../classes/eco-server';
 export class EcoWebApiService {
 
   private serverUrl = 'http://89.163.231.54:1002';
+  // private serverUrl = 'http://66.142.221.220:4001';
 
   constructor(
     private http: HttpClient
@@ -27,7 +28,10 @@ export class EcoWebApiService {
     const url = `${this.serverUrl}api/v1/analysis/playstyles`;
     return this.http.get<EcoServer['playerStyles']>(url);
   }
-
+  getServerChat(): Observable<EcoServer[]> {
+    const url = `${this.serverUrl}api/v1/chat`;
+    return this.http.get<EcoServer['playerStyles']>(url);
+  }
 }
 /*
   https://eco-mods.com/threads/eco-web-api.79/

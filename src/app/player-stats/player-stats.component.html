@@ -1,4 +1,5 @@
 <div class="container">
+    <!-- {{stats$}} -->
     <div class="row" *ngFor="let item of (stats$ | async) | keyvalue">
       <div class="col-6">
           {{item.key}}
@@ -8,4 +9,4 @@
       </div>
     </div>
   </div>
-  <ngx-chartjs [data]="data" type="bar"></ngx-chartjs>
+  <!-- <ngx-chartjs [data]="data" type="bar"></ngx-chartjs> -->

@@ -1,0 +1,11 @@
+<div class="container">
+  {{stats$}}
+  <div class="row" *ngFor="let item of (stats$ | async)">
+    <div class="col-6">
+        {{item}}
+    </div>
+    <div class="col-6">
+        {{item}}
+    </div>
+  </div>
+</div>

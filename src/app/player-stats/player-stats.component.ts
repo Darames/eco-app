@@ -12,7 +12,7 @@ import { ChartjsModule } from '@ctrl/ngx-chartjs';
 
 export class PlayerStatsComponent implements OnInit {
 
-  stats: EcoServer[];
+  stats$: EcoServer[];
   statsSub: Subscription;
   data: object;
 
@@ -26,9 +26,10 @@ export class PlayerStatsComponent implements OnInit {
   }
 
   showPlayerStats() {
-    this.statsSub = this.ecoWebApiService.getServerPlayerStats().subscribe(stats => this.stats = stats );
+    this.statsSub = this.ecoWebApiService.getServerPlayerStats().subscribe(stats => this.stats$ = stats );
   }
   getChartdata() {
+
     const data = {
       labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
       datasets: [

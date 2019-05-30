@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ServerInfoComponent } from './server-info/server-info.component';
 import { PlayerStatsComponent } from './player-stats/player-stats.component';
 import { ChartjsModule } from '@ctrl/ngx-chartjs';
+import { ChatViewComponent } from './chat-view/chat-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ServerInfoComponent,
-    PlayerStatsComponent
+    PlayerStatsComponent,
+    ChatViewComponent
   ],
   imports: [
     BrowserModule,
