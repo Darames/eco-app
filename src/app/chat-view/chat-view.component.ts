@@ -30,3 +30,6 @@ export class ChatViewComponent implements OnInit {
     this.chatSub.unsubscribe();
   }
 }
+
+
+// https://stackblitz.com/edit/json-import-example

@@ -26,7 +26,7 @@ export class PlayerStatsComponent implements OnInit {
   }
 
   showPlayerStats() {
-    this.statsSub = this.ecoWebApiService.getServerPlayerStats().subscribe(stats => this.stats$ = stats );
+    // this.statsSub = this.ecoWebApiService.getServerPlayerStats().subscribe(stats => this.stats$ = stats );
   }
   getChartdata() {
 
