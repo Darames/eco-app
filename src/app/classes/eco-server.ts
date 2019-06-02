@@ -1,7 +1,31 @@
 export class EcoServer {
-    info: [];
-    playerStats: [];
-    playerStyles: [];
-    chat: [];
-    testIP: '89.163.231.54:1001';
-  }
+  uniqueIdentifier: number;
+  id: {};
+  external: boolean;
+  gamePort: number;
+  webPort: number;
+  isLAN: boolean;
+  description: string;
+  detailedDescription: string;
+  category: string;
+  onlinePlayers: number;
+  totalPlayers: number;
+  adminOnline: boolean;
+  timeSinceStart: number;
+  timeLeft: number;
+  animals: number;
+  plants: number;
+  laws: number;
+  leader: string;
+  worldSize: string;
+  version: string;
+  economyDesc: string;
+  skillSpecialization: string;
+  skillSpecializationSetting: string;
+  language: string;
+  hasPassword: boolean;
+  hasMeteor: boolean;
+  distributionStationItems: string;
+  playtimes: number;
+  discordAddress: string;
+}

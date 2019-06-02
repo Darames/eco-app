@@ -1,7 +1,8 @@
 <div class="container">
-  <div class="row" *ngFor="let item of (chat$ | async)">
+  <div class="row" *ngFor="let item of chat$ | json">
     <div class="col-12">
-        {{item}} 
+        {{item.text}}
+        {{item.username}}
     </div>
   </div>
 </div>

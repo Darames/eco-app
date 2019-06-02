@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { EcoServer } from '../classes/eco-server';
+import { ServerChat } from '../classes/server-chat';
 
 @Injectable({
   providedIn: 'root'
@@ -18,18 +19,14 @@ export class EcoWebApiService {
 
   getServerInfo(): Observable<EcoServer[]> {
     const url = `${this.serverUrl}/info`;
-    return this.http.get<EcoServer['info']>(url)
-      .pipe(
-        catchError(this.handleError<EcoServer[]>('getInfo', []))
-      );
+    return this.http.get<EcoServer[]>(url);
   }
-  getServerChat(): Observable<EcoServer[]> {
-    const url = `${this.serverUrl}api/v1/chat`;
-    return this.http.get<EcoServer['chat']>(url)
-      .pipe(
-        catchError(this.handleError<EcoServer[]>('getChat', []))
-      );
+  getServerChat(): Observable<ServerChat[]> {
+    const url = `${this.serverUrl}/api/v1/chat`;
+    return this.http.get<ServerChat[]>(url);
   }
+
+  
   // player stats und styles führen zu server lags
   // getServerPlayerStats(): Observable<EcoServer[]> {
   //   const url = `${this.serverUrl}/api/v1/analysis/playerstats`;
@@ -44,3 +41,7 @@ export class EcoWebApiService {
   https://eco-mods.com/threads/eco-web-api.79/
   https://claystk.info/help/ecoserverapi
 */
+
+// .pipe(
+//   catchError(this.handleError<EcoServer[]>('getInfo', []))
+// );

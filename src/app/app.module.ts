@@ -7,6 +7,7 @@ import { ServerInfoComponent } from './server-info/server-info.component';
 import { PlayerStatsComponent } from './player-stats/player-stats.component';
 import { ChartjsModule } from '@ctrl/ngx-chartjs';
 import { ChatViewComponent } from './chat-view/chat-view.component';
+import { EcoWebApiService } from './sevices/eco-web-api.service';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { ChatViewComponent } from './chat-view/chat-view.component';
     HttpClientModule,
     ChartjsModule
   ],
-  providers: [],
+  providers: [EcoWebApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

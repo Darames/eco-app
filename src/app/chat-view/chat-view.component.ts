@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { EcoServer } from '../classes/eco-server';
+import { ServerChat } from '../classes/server-chat';
 import { EcoWebApiService } from '../sevices/eco-web-api.service';
 import { Observable, Subscription } from 'rxjs';
 
@@ -9,9 +9,9 @@ import { Observable, Subscription } from 'rxjs';
   styleUrls: ['./chat-view.component.scss']
 })
 
-export class ChatViewComponent implements OnInit {
+export class ChatViewComponent implements OnInit, OnDestroy{
 
-  chat$: EcoServer[];
+  chat$: ServerChat[];
   chatSub: Subscription;
 
   constructor(
@@ -23,7 +23,7 @@ export class ChatViewComponent implements OnInit {
   }
 
   showChat() {
-    this.chatSub = this.ecoWebApiService.getServerChat().subscribe(chat => this.chat$ = chat );
+    this.chatSub = this.ecoWebApiService.getServerChat().subscribe(data => this.chat$ = data);
   }
 
   ngOnDestroy() {
