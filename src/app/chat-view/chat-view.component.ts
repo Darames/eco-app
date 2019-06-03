@@ -11,7 +11,7 @@ import { Observable, Subscription } from 'rxjs';
 
 export class ChatViewComponent implements OnInit, OnDestroy{
 
-  chat$: ServerChat[];
+  chat: ServerChat[];
   chatSub: Subscription;
 
   constructor(
@@ -23,7 +23,12 @@ export class ChatViewComponent implements OnInit, OnDestroy{
   }
 
   showChat() {
-    this.chatSub = this.ecoWebApiService.getServerChat().subscribe(data => this.chat$ = data);
+    this.chatSub = this.ecoWebApiService.getServerChat().subscribe(data => {
+
+      console.log(data);
+
+      this.chat = data;
+    });
   }
 
   ngOnDestroy() {

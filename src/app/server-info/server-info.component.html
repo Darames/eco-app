@@ -1,18 +1,20 @@
+<ng-container *ngIf="server$ | async as server">
 <div class="container">
-  <div class="row" *ngFor="let item of (server$ | async) | keyvalue">
-    <div class="col-6">
-        {{item.key}}
+    <div class="row" *ngFor="let item of server | keyvalue">
+        <div class="col-6">
+            {{item.key}}
+        </div>
+        <div class="col-6">
+            {{item.value}}
+        </div>
     </div>
-    <div class="col-6">
-        {{item.value}}
+    <!-- <div class="row">
+        <div class="col-6">
+            {{server}}
+        </div>
+        <div class="col-6">
+            {{server}}
+        </div>
+        </div> -->
     </div>
-  </div>
-  <!-- <div class="row">
-      <div class="col-6">
-          {{server$ | async}}
-      </div>
-      <div class="col-6">
-          {{server$ | async}}
-      </div>
-    </div> -->
-</div>
+</ng-container>
